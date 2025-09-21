@@ -1,0 +1,3 @@
+## https://docs.expo.dev/get-started/start-developing/
+npx create-expo-app@latest
+npx expo start
