@@ -66,8 +66,6 @@ const App = () => {
         refreshing={loading}
         onRefresh={() => dispatch(fetchPostsRequest())}
         renderItem={({ item }) => {
-          console.log("Item:", item.id);
-
           return (
             <TouchableOpacity
               onPress={() => {
