@@ -1,77 +1,18 @@
-// import { ImageAssets } from "assets/images";
-// import { router } from "expo-router";
-// import React, { FC } from "react";
-// import {
-//     Image,
-//     ImageStyle,
-//     TextStyle,
-//     useWindowDimensions,
-//     View,
-//     ViewStyle,
-// } from "react-native";
-// import { Button, Screen, Text } from "src/components/core/atoms";
-// import useAuthentication from "src/hooks/useAuthentication";
-// import { moderateScale } from "src/models/helpers/functionList";
-// import { colors, typography } from "src/theme";
+import { StyleSheet, Text, View } from "react-native";
 
-// const NotFoundScreen: FC = () => {
-//   const { width } = useWindowDimensions();
-//   const { isAuthenticated } = useAuthentication();
-//   const goToHome = () => {
-//     router.dismissTo({
-//       pathname: isAuthenticated ? "/home" : "/AuthSignInPhoneScreen",
-//     });
-//   };
+export default function NotFoundScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>404 - Page Not Found</Text>
+      <Text style={styles.subtitle}>
+        Halaman yang kamu cari tidak ditemukan.
+      </Text>
+    </View>
+  );
+}
 
-//   return (
-//     <Screen
-//       preset="fixed"
-//       safeAreaEdges={["top", "bottom"]}
-//       backgroundColor={colors.palette.neutral100}
-//       style={$root}
-//     >
-//       <Image
-//         source={ImageAssets.branchNotFound}
-//         resizeMode="contain"
-//         style={$image(width)}
-//       />
-
-//       <View style={$textContainer}>
-//         <Text tx="notFound:title" size="lg" weight="bold" align="center" />
-//         <Text tx="notFound:description" size="xs" align="center" />
-//       </View>
-
-//       <Button
-//         tx={isAuthenticated ? "notFound:backToHome" : "notFound:login"}
-//         onPress={goToHome}
-//         style={$button}
-//         textProps={{ weight: "bold" }}
-//         buttonLabelTextStyle={$buttonLabelText}
-//       />
-//     </Screen>
-//   );
-// };
-
-// const $center: ViewStyle = { justifyContent: "center", alignItems: "center" };
-
-// const $root: ViewStyle = { ...$center, padding: moderateScale(16) };
-
-// const $image = (width: number): ImageStyle => ({
-//   width: width / 2,
-//   height: width / 2,
-//   margin: "auto",
-// });
-
-// const $textContainer: ViewStyle = {
-//   justifyContent: "center",
-//   alignItems: "center",
-//   gap: moderateScale(8),
-//   marginTop: moderateScale(20),
-//   marginBottom: moderateScale(24),
-// };
-
-// const $button: ViewStyle = { borderColor: colors.palette.black };
-
-// const $buttonLabelText: TextStyle = { fontFamily: typography.primary.bold };
-
-// export default NotFoundScreen;
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+  title: { fontSize: 24, fontWeight: "bold", marginBottom: 8 },
+  subtitle: { fontSize: 16, color: "gray" },
+});
