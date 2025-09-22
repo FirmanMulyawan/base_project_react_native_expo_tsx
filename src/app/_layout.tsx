@@ -1,0 +1,17 @@
+import { Stack } from "expo-router";
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "../store";
+
+const RootLayout = () => {
+  return (
+    <Provider store={store}>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="detail/[id]" />
+      </Stack>
+    </Provider>
+  );
+};
+
+export default RootLayout;
